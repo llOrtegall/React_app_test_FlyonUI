@@ -1,8 +1,8 @@
 const App = (): JSX.Element => {
   return (
-    <div className="bg-fuchsia-400">
-      Hello World
-    </div>
+    <section>
+      <h1>App</h1>
+    </section>
   )
 }
 
