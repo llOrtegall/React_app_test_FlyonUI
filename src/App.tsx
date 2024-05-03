@@ -1,6 +1,6 @@
 const App = (): JSX.Element => {
   return (
-    <div>
+    <div className="bg-fuchsia-400">
       Hello World
     </div>
   )
