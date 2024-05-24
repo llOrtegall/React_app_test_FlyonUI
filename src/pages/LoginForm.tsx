@@ -13,17 +13,17 @@ function LoginForm() {
           <Label htmlFor="user">Usuario:</Label>
 
           <div className="flex items-center gap-1">
-            <UserIcon size={'8'}/>
+            <UserIcon />
             <Input placeholder="CP1118******" type="text" id="username" name="username" />
           </div>
 
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 pb-8">
 
           <Label htmlFor="password">Contraseña:</Label>
 
           <div className="flex items-center gap-1">
-            <LockIcon size={'8'}/>
+            <LockIcon/>
             <Input placeholder="************" type="password" id="password" name="password" />
           </div>
         </div>
