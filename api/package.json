@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "./src/server.ts",
+  "license": "MIT",
+  "description": "API para gestionar turnos de la compañia",
+  "author": {
+    "name": "Ivan Ortega Garzon",
+    "email": "IvanOrtega_97@hotmail.com",
+    "url": "https://github.com/llOrtegall/proyect_turnos"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "lint": "eslint '*/**/*.{js,ts}' --quiet --fix"
+  },
+  "dependencies": {
+    "express": "4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.21",
+    "@types/node": "20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "nodemon": "3.1.1",
+    "standard": "17.1.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.4.5"
+  }
+}
