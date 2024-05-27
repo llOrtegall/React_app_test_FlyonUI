@@ -3,6 +3,6 @@ import { Router } from 'express'
 
 export const loginRouter = Router()
 
-loginRouter.post('/create', CreateUser)
+loginRouter.post('/user/create', CreateUser)
 
-loginRouter.post('/login', LoginUser)
+loginRouter.post('/user/login', LoginUser)
