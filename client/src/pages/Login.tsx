@@ -1,27 +1,7 @@
-import { useNavigate } from 'react-router-dom'
-import React, { useState } from 'react'
-import axios from 'axios'
+import { useLogin } from '../hooks/useLogin'
 
 function Login () {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-
-  const navigate = useNavigate()
-
-  const handleSubmit = (ev: React.FormEvent) => {
-    ev.preventDefault()
-
-    axios.post('/api/v1/user/login', { username, password })
-      .then(res => {
-        console.log(res.data)
-        if (res.data.auth === true) {
-          navigate('/')
-        }
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }
+  const { handleSubmit, setPassword, setUsername } = useLogin()
 
   return (
     <section className='w-screen h-screen flex items-center justify-center'>

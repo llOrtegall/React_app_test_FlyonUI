@@ -6,7 +6,7 @@ interface Props {
   redirectTo?: string
 }
 
-export function ProtectedRoute ({ isAllowed, redirectTo = '/login' }: Props) {
+export function ProtectedRoute ({ isAllowed, redirectTo = '/' }: Props) {
   if (!isAllowed) {
     return <Navigate to={redirectTo} />
   }
