@@ -11,7 +11,7 @@ function Login () {
   const handleSubmit = (ev: React.FormEvent) => {
     ev.preventDefault()
 
-    axios.post('/api/v1/login', { username, password })
+    axios.post('/api/v1/user/login', { username, password })
       .then(res => {
         console.log(res.data)
         if (res.data.auth === true) {

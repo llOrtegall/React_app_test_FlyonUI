@@ -10,14 +10,35 @@ export async function CreateUser (req: Request, res: Response) {
 
   try {
     await User.sync()
-    const createProduct = await User.create({
+    const UserCreated = await User.create({
       username,
       password,
       email
     })
-    res.status(201).json(createProduct)
+    return res.status(201).json(UserCreated)
   } catch (error) {
-    res.status(500).json({ error })
+    return res.status(500).json({ error })
+  }
+}
+
+export async function updateUser (req: Request, res: Response) {
+  const { username, password, email } = req.body
+
+  if (!username) {
+    return res.status(400).json({ error: 'username is required' })
+  }
+
+  try {
+    await User.sync()
+    const updatedUser = await User.update({
+      username,
+      password,
+      email
+    }, { where: { username } })
+    console.log(updatedUser)
+    return res.status(201).json(updatedUser)
+  } catch (error) {
+    return res.status(500).json({ error })
   }
 }
 
