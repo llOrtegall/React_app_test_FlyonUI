@@ -1,31 +1,51 @@
-import { connectionDb } from '../connections/mysql'
+import { connectionDbPB } from '../connections/mysql'
 import { DataTypes, Model } from 'sequelize'
 
 class Pdv extends Model {}
 
-Pdv.init({
-  id: {
-    type: DataTypes.STRING,
-    defaultValue: DataTypes.UUIDV4,
-    primaryKey: true
+Pdv.init(
+  {
+    ZONA: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    CCOSTO: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    CODIGO: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      primaryKey: true,
+      unique: true
+    },
+    NOMBRE: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    DIRECCION: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    TIPO: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    DISPOSITIVO: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    SUPERVISOR: {
+      type: DataTypes.STRING,
+      allowNull: true
+    }
   },
-  nombre: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  sucursal: {
-    type: DataTypes.STRING,
-    unique: true,
-    allowNull: false
-  },
-  direccion: {
-    type: DataTypes.STRING,
-    unique: true,
-    allowNull: false
+  {
+    sequelize: connectionDbPB,
+    modelName: 'SUCURSAL',
+    tableName: 'SUCURSALES',
+    timestamps: false
   }
-}, {
-  sequelize: connectionDb,
-  modelName: 'Pdv'
-})
+)
 
 export { Pdv }
