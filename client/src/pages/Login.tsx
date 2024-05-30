@@ -1,4 +1,4 @@
-import { LockIcon, UserIcon } from '../components/icons'
+import { Image, LockIcon, UserIcon } from '../components/icons'
 import { Button, Input, Label } from '../components/ui'
 import { useLogin } from '../hooks/useLogin'
 
@@ -10,7 +10,7 @@ function Login () {
 
       <form className='w-96 mb-2 border p-12 rounded-lg bg-white/30 flex flex-col gap-4 shadow-xl'>
         <figure className='flex justify-center'>
-          <img src='/gane.webp' className='w-20 xl:w-24 1xl:w-28 3xl:w-32' />
+          <Image src='/gane.webp' />
         </figure>
 
         <article className='w-full flex flex-col gap-2'>
@@ -38,10 +38,6 @@ function Login () {
         <Button onClick={handleSubmit}>Iniciar Sesión</Button>
       </form>
 
-      {/* <section className='h-10'>
-        <MessageDisplay message={message} error={error} />
-        {loading && <Loading />}
-      </section> */}
     </section>
   )
 }
