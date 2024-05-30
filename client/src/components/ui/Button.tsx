@@ -1,10 +1,10 @@
-import { ButtonHTMLAttributes, JSX } from 'react'
+import React from 'react'
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> { }
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> { }
 
-export function Button ({ children, ...props }: Props): JSX.Element {
+export function Button ({ children, ...props }: Props) {
   return (
-    <button className='p-2 shadow-md bg-blue-400 rounded-md font-semibold text-white hover:bg-green-500 transition-all duration-300 ease-in-out' {...props}>
+    <button className='p-2  shadow-lg bg-blue-600 rounded-md font-semibold text-white hover:bg-green-500 transition-all duration-300 ease-in-out' {...props}>
       {children}
     </button>
   )
